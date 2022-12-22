@@ -27,5 +27,5 @@ Functionalities:
 **Edit Page:**
 - Edits an existing entry
 
-**Random Page:
+**Random Page:**
 - Goes to a random entry
