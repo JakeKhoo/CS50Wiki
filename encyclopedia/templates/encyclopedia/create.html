@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %} {% block title %} Create a New Page
+{%endblock%} {% block body %}
+{% if messages %}
+<div class="messages", style = "color:red">
+    {% for message in messages %}
+    <h4{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h4>
+    {% endfor %}
+</div>
+{% endif %}
+<h1>Create a new wiki Page:</h1>
+<p>Fill up the form below using markdown language</p>
+
+<form action="{% url 'create' %}" method="post">
+  {% csrf_token %} {{createform.title}}
+  <br></br>
+  {{createform.entry}}
+  <br></br>
+  <input class="btn btn-primary" type="submit" value="Save entry" />
+</form>
+
+{% endblock %}
